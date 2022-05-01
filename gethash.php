@@ -15,7 +15,7 @@
 </body>
 </html>
 <?php
-if (isset($_GET['pass'])) {
+if (isset($_GET['pass'])) { //cogemos la contraseña del formulario, le pasamos el hash y la imprimimos por pantalla.
     echo "Contraseña cifrada: ";
     echo password_hash($_GET['pass'], PASSWORD_DEFAULT);
 }

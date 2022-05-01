@@ -20,10 +20,10 @@
         if (isset($_POST['boton'])) { //si enviamos el formulario
             $usuario = $_POST['user'];
             $contrasenya = $_POST['password'];
-            $resultado = login($usuario, $contrasenya); //lo comprobamos
+            $resultado = login($usuario, $contrasenya); //comprobamos que el login sea correcto
             if ($resultado) { //si el login es correcto
-                session_start();
-                $_SESSION['login'] = true;
+                session_start(); //iniciamos sesión
+                $_SESSION['login'] = true; //guardamos variable de sesión
                 echo "<br>Login correcto<br>";//mostramos mensaje
                 echo "Volviendo al menú...<br>"; 
                 header("Refresh:2; url=index.php"); //y redirigimos al menú

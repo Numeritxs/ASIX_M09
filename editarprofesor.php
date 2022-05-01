@@ -10,9 +10,9 @@
         $resultado = mostrarTodosProfesores(); //y mostramos los profes
         $existe = verPagina();
         if ($existe == 1 && isLogged()) { //comprobamos si puede ver la página
-            if (isset($_GET["profesor"]) && $_GET["profesor"] != existeProfesor($_GET["profesor"])) {
+            if (isset($_GET["profesor"]) && $_GET["profesor"] != existeProfesor($_GET["profesor"])) { //si el profesor no existe
                 echo "ERROR: A no ser que seas el mismísimo Dios en persona, nadie puede editar un profesor que no existe.<br/>";
-            } else {
+            } else { //si existe, mostramos la página
                 ?>
                 <h1>Stucom - Editar profesor</h1>
                     <?php
@@ -34,7 +34,7 @@
                         } else {//si no,
                             echo $resultado; //mostramos error
                         }
-                    } else {
+                    } else { //si no hay form enviado, lo mostramos
                         ?>
                         <form method="GET">
                         Selecciona un profesor: <select name="profesor" required>
@@ -50,13 +50,13 @@
                         </form>
                         <?php
                     }
-                    if (isset($_POST['boton2'])) {
+                    if (isset($_POST['boton2'])) { //una vez enviado el formulario de editar profesor, lo actualizamos
                         $nombre = $_POST['nombre'];
                         $apellidos = $_POST['apellidos'];
                         $edad = $_POST['edad'];
                         $ciclos = $_POST['ciclos'];
                         $colegio = $_POST['colegio'];
-                        empty($colegio) ? $colegio = 'Stucom' : $colegio = $colegio;
+                        empty($colegio) ? $colegio = 'Stucom' : $colegio = $colegio; //si el campo colegio está vacío, lo rellenamos con Stucom
                         $resultado2 = actualizarProfesor($nombre, $apellidos, $edad, $profesor, $ciclos, $colegio); //lo actualizamos
                         if ($resultado2 == "ok") { //si el update es correcto
                             echo "<br>Profesor actualizado<br>";//mostramos mensaje

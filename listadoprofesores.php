@@ -11,7 +11,7 @@
         if ($existe == 1) { //comprobamos que pueda ver la página
             $profesores = selectAllProfesoresOrdenaditos(); //buscamos todos los profesores en orden
             ?>
-            <h2>Stucom - Listado de Profesores: </h2>
+            <h2>Stucom - Listado de Profesores </h2>
             <table border="1px">
                 <tr>
                     <td>Nombre</td>
@@ -25,7 +25,7 @@
                 </tr>
                 <?php
                 while ($fila = mysqli_fetch_assoc($profesores)) { 
-                    $resultado2 = mostrarTodosModulos($fila["dni"]);
+                    $resultado2 = mostrarTodosModulos($fila["dni"]); //buscamos todos los módulos del profesor seleccionado y printamos los datos en la tabla
                     ?>
                     <tr>
                         <td><?php echo $fila["nombre"] ?></td>
@@ -33,7 +33,7 @@
                         <td><?php echo $fila["edad"] ?></td>
                         <td><?php echo $fila["dni"] ?></td>
                         <td><?php echo $fila["ciclos"] ?></td>
-                        <td><?php while ($fila2 = mysqli_fetch_assoc($resultado2)) { echo $fila2["nombre"]; ?><br/><?php } ?></td>
+                        <td><?php while ($fila2 = mysqli_fetch_assoc($resultado2)) { echo $fila2["nombre"]; ?><br/><?php } //recorremos el array de módulos de el profe seleccionado y los printamos?></td> 
                         <td><?php echo $fila["colegio"] ?></td>
                         <td><?php echo $fila["fecha_alta"] ?></td>
                     </tr>

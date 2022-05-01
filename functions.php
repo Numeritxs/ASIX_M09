@@ -122,7 +122,7 @@ function selectAllProfesoresOrdenaditos() {
     return $resultado;
 }
 
-//funcion para loguear como gestor academico
+//funcion para loguear como gestor académico
 function login($usuario, $contrasenya) {
     $c = conectar();
     $select = "select * from gestores where user = '$usuario'";
@@ -137,6 +137,7 @@ function login($usuario, $contrasenya) {
     return $existe;
 }
 
+//función para comprobar que esté la sesión iniciada
 function isLogged() {
     session_start();
     if (isset($_SESSION['login']) && $_SESSION['login']) {
@@ -154,6 +155,7 @@ function selectAllProfeAttributes($profe) {
     return $resultado;
 }
 
+//función para editar un profesor ya existente
 function actualizarProfesor($nombre, $apellidos, $edad, $profesor, $ciclos, $colegio = 'Stucom') {
     $c = conectar();
     $update = "update profesores set nombre='$nombre', apellidos='$apellidos', edad='$edad', ciclos='$ciclos', colegio='$colegio' where dni = '$profesor'";

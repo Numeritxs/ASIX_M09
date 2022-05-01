@@ -10,9 +10,9 @@
         $resultado = mostrarTodosProfesores(); //y mostramos los profes
         $existe = verPagina();
         if ($existe == 1 && isLogged()) { //comprobamos si puede ver la página
-            if (isset($_GET["profesor"]) && $_GET["profesor"] != existeProfesor($_GET["profesor"])) {
+            if (isset($_GET["profesor"]) && $_GET["profesor"] != existeProfesor($_GET["profesor"])) { //si la variable profesor está puesta y no es un DNI almacenado en la BBDD...
                 echo "ERROR: A no ser que seas el mismísimo Dios en persona, nadie puede editar un profesor que no existe.<br/>";
-            } else {
+            } else { //si no...
                 ?>
                 <h1>Stucom - Módulos de profesor</h1>
                     <?php
@@ -42,7 +42,7 @@
                         } else {//si no,
                             echo $resultado; //mostramos error
                         }
-                    } else {
+                    } else { //si no hay variable profesor en la URL, mostramos seleccionador de profesor
                         ?>
                         <form method="GET">
                         Selecciona un profesor: <select name="profesor" required>
@@ -58,7 +58,7 @@
                         </form>
                         <?php
                     }
-                    if (isset($_POST['boton2'])) {
+                    if (isset($_POST['boton2'])) { //cuando se envíe el formulario, añadimos o eliminamos los módulos del profesor 
                         $resultado4 = insertOrDeleteModuloProfesor($_POST['modulos'], $profesor);
                         header("Refresh:0; url=altamodulo.php?profesor=$profesor&boton=Enviar");
                     }
