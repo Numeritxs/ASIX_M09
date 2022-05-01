@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-05-2022 a las 13:41:41
+-- Tiempo de generación: 01-05-2022 a las 14:21:48
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -72,23 +72,6 @@ CREATE TABLE `modulos_profes` (
   `nombre` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `modulos_profes`
---
-
-INSERT INTO `modulos_profes` (`dni`, `nombre`) VALUES
-('49327478E', 'sistemas'),
-('49327478E', 'web'),
-('49327478E', 'english'),
-('49327478E', 'bases de datos'),
-('tfghdfghd', 'web'),
-('tfghdfghd', 'java'),
-('tfghdfghd', 'english'),
-('tfghdgfdsfd', 'sistemas'),
-('tfghdgfdsfd', 'java'),
-('profanar la tumba al ritmo de la rumba', 'redes'),
-('select * from modulos', 'java');
-
 -- --------------------------------------------------------
 
 --
@@ -104,16 +87,6 @@ CREATE TABLE `profesores` (
   `colegio` varchar(50) NOT NULL,
   `fecha_alta` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `profesores`
---
-
-INSERT INTO `profesores` (`nombre`, `apellidos`, `edad`, `dni`, `ciclos`, `colegio`, `fecha_alta`) VALUES
-('crisitanhfdgfghjfdgs', 'catalan', 42, '37564265K', 'srgsdrf', 'Stucom', '2022-05-01'),
-('grfdhbfg', 'hgfdhfghgf', 22, '46578029Q', 'hfdghgdf', 'fgdhdfg', '2022-05-01'),
-('ivansito', 'amelasion', 22, '49327478E', 'daw1', '', '2022-04-13'),
-('gdrfsgdfg', 'sfdhfdghgdfh', 22, 'tfghdfghd', 'hfgdhfgdhfg', 'hfgdhhfgh', '2022-04-30');
 
 --
 -- Índices para tablas volcadas
