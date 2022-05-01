@@ -7,8 +7,7 @@
     <body>
         <?php
         require_once 'functions.php'; //pedimos el archivo de las funciones
-        $existe = verPagina();
-        if ($existe == 1 && isLogged()) {//si puede ver la página y está logueado, mostramos formulario de alta
+        if (isLogged()) {//si está logueado, mostramos formulario de alta
             ?>
             <h1> Stucom  - Alta profesor</h1>
             <form method="POST">
